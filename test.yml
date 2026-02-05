@@ -1,0 +1,31 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - main # main 브랜치에 푸시될 때 실행
+  pull_request:
+    branches:
+      - main # main 브랜치로 향하는 Pull Request가 생성/업데이트될 때 실행
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 'lts/*' # 또는 프로젝트에 필요한 Node.js 버전
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Type Check
+        run: npm run typecheck
+
+      - name: Run Tests
+        run: npm run test

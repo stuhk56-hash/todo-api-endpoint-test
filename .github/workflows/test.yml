@@ -1,7 +1,7 @@
 # .github/workflows/test.yml
 # 이 GitHub Actions 워크플로우는 main 브랜치로의 푸시 또는 Pull Request가 생기면 자동으로 테스트를 실행합니다.
 # 통합 테스트를 위해 PostgreSQL 데이터베이스를 함께 실행합니다.
-# 2026-02-05 11:47AM
+# 2026-02-05 13:00PM
 name: Test
 
 on:
